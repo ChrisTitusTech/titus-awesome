@@ -1,0 +1,3 @@
+#!/bin/bash
+
+spectacle -b -n $@ -o ~/Pictures/Screenshot-$(date "+%Y.%m.%d-%H.%M.%S").png ; xclip -selection clipboard -target image/png -i ~/Pictures/Screenshot-$(date "+%Y.%m.%d-%H.%M.%S").png ; paplay /usr/share/sounds/freedesktop/stereo/camera-shutter.oga
