@@ -8,9 +8,9 @@ An almost desktop environment made with [AwesomeWM](https://awesomewm.org/) foll
 [![](./theme/titus-theme/demo.png)](https://www.reddit.com/r/unixporn/comments/anp51q/awesome_material_awesome_workflow/)
 *[Click to view in high quality](https://www.reddit.com/r/unixporn/comments/anp51q/awesome_material_awesome_workflow/)*
 
-| Tiled         | Panel         | Exit screen   |
+| Fullscreen   | Rofi Combo Panel | Exit screen   |
 |:-------------:|:-------------:|:-------------:|
-|![](https://i.imgur.com/fELCtep.png)|![](./theme/titus-theme/panel.png)|![](https://i.imgur.com/rcKOLYQ.png)|
+|![](./theme/titus-theme/fullscreen.png)|![](./theme/titus-theme/panel.png)|![](https://i.imgur.com/rcKOLYQ.png)|
 
 ## Installation
 
