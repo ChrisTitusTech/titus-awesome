@@ -65,6 +65,8 @@ git clone --branch debian https://github.com/ChrisTitusTech/titus-awesome ~/.con
 Start `lxappearance` to active the **icon** theme and **GTK** theme
 Note: for cursor theme, edit `~/.icons/default/index.theme` and `~/.config/gtk3-0/settings.ini`, for the change to also show up in applications run as root, copy the 2 files over to their respective place in `/root`.
 
+Recommended Cursors - <https://github.com/keeferrourke/capitaine-cursors>
+
 ### 4) Same theme for Qt/KDE applications and GTK applications, and fix missing indicators
 
 First install `qt5-style-plugins` (debian) | `qt5-styleplugins` (arch) and add this to the bottom of your `/etc/environment`
