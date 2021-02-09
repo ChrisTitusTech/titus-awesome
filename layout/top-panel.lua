@@ -9,7 +9,6 @@ local mat_icon_button = require('widget.material.icon-button')
 local mat_icon = require('widget.material.icon')
 local dpi = require('beautiful').xresources.apply_dpi
 local icons = require('theme.icons')
-local logout_menu_widget = require("awesome-wm-widgets.logout-menu-widget.logout-menu")
 
 -- Titus - Horizontal Tray
 local systray = wibox.widget.systray()
@@ -31,7 +30,7 @@ local month_calendar = awful.widget.calendar_popup.month({
 })
 month_calendar:attach(textclock)
 
-local clock_widget = wibox.container.margin(textclock, dpi(13), dpi(13), dpi(11), dpi(8))
+local clock_widget = wibox.container.margin(textclock, dpi(13), dpi(13), dpi(9), dpi(8))
 
 local add_button = mat_icon_button(mat_icon(icons.plus, dpi(24)))
 add_button:buttons(
@@ -93,12 +92,13 @@ local LayoutBox = function(s)
 end
 
 local TopPanel = function(s)
-  local panel =
+  
+    local panel =
     wibox(
     {
       ontop = true,
       screen = s,
-      height = dpi(40),
+      height = dpi(32),
       width = s.geometry.width,
       x = s.geometry.x,
       y = s.geometry.y,
@@ -106,38 +106,36 @@ local TopPanel = function(s)
       bg = beautiful.background.hue_800,
       fg = beautiful.fg_normal,
       struts = {
-        top = dpi(40)
+        top = dpi(32)
       }
     }
-  )
+    )
 
-  panel:struts(
-    {
-      top = dpi(40)
-    }
-  )
+    panel:struts(
+      {
+        top = dpi(32)
+      }
+    )
 
-  panel:setup {
-    layout = wibox.layout.align.horizontal,
-    {
-      layout = wibox.layout.fixed.horizontal,
-      -- Create a taglist widget
-      TagList(s),
-      TaskList(s),
-      add_button
-    },
-    nil,
-    {
-      layout = wibox.layout.fixed.horizontal,
-      wibox.container.margin(systray, dpi(3), dpi(3), dpi(11), dpi(3)),
-      -- Clock
-      clock_widget,
-      -- Layout box
-      LayoutBox(s),
-      -- Power Widget
-      logout_menu_widget(),
+    panel:setup {
+      layout = wibox.layout.align.horizontal,
+      {
+        layout = wibox.layout.fixed.horizontal,
+        -- Create a taglist widget
+        TagList(s),
+        TaskList(s),
+        add_button
+      },
+      nil,
+      {
+        layout = wibox.layout.fixed.horizontal,
+        wibox.container.margin(systray, dpi(3), dpi(3), dpi(6), dpi(3)),
+        -- Layout box
+        LayoutBox(s),
+        -- Clock
+        clock_widget,
+      }
     }
-  }
 
   return panel
 end

@@ -58,6 +58,22 @@ local globalKeys =
     end,
     {description = 'Reboot Computer', group = 'awesome'}
   ),
+  awful.key(
+    {modkey, 'Shift'},
+    's',
+    function()
+      awful.spawn('shutdown now')
+    end,
+    {description = 'Shutdown Computer', group = 'awesome'}
+  ),
+  awful.key(
+    {modkey, 'Shift'},
+    'l',
+    function()
+      _G.exit_screen_show()
+    end,
+    {description = 'Log Out Screen', group = 'awesome'}
+  ),
   awful.key({modkey}, 'u', awful.client.urgent.jumpto, {description = 'jump to urgent client', group = 'client'}),
   awful.key(
     {altkey},
