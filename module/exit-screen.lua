@@ -105,6 +105,7 @@ local screen_geometry = awful.screen.focused().geometry
 exit_screen =
   wibox(
   {
+    screen = 1,
     x = screen_geometry.x,
     y = screen_geometry.y,
     visible = false,
