@@ -15,7 +15,7 @@ return {
     screenshot = 'flameshot screen -p ~/Pictures',
     region_screenshot = 'flameshot gui -p ~/Pictures',
     delayed_screenshot = 'flameshot screen -p ~/Pictures -d 5000',
-    browser = 'brave',
+    browser = 'brave-browser',
     editor = 'gedit', -- gui text editor
     social = 'discord',
     game = rofi_command,
