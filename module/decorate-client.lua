@@ -30,7 +30,7 @@ local function renderClient(client, mode)
   end
 end
 
-local changesOnScreenCalled = false
+local changesOnScreenCalled = {}
 
 local function changesOnScreen(currentScreen)
   local tagIsMax = currentScreen.selected_tag ~= nil and currentScreen.selected_tag.layout == awful.layout.suit.max
@@ -51,13 +51,13 @@ local function changesOnScreen(currentScreen)
   for _, client in pairs(clientsToManage) do
     renderClient(client, currentScreen.client_mode)
   end
-  changesOnScreenCalled = false
+  changesOnScreenCalled[currentScreen.index] = false
 end
 
 function clientCallback(client)
-  if not changesOnScreenCalled then
-    if not client.skip_decoration and client.screen then
-      changesOnScreenCalled = true
+  if not client.skip_decoration and client.screen then
+    if not changesOnScreenCalled[client.screen.index] then
+      changesOnScreenCalled[client.screen.index] = true
       local screen = client.screen
       gears.timer.delayed_call(
         function()
@@ -69,9 +69,9 @@ function clientCallback(client)
 end
 
 function tagCallback(tag)
-  if not changesOnScreenCalled then
-    if tag.screen then
-      changesOnScreenCalled = true
+  if tag.screen then
+    if not changesOnScreenCalled[tag.screen.index] then
+      changesOnScreenCalled[tag.screen.index] = true
       local screen = tag.screen
       gears.timer.delayed_call(
         function()
@@ -104,3 +104,4 @@ _G.client.connect_signal(
 _G.tag.connect_signal('property::selected', tagCallback)
 
 _G.tag.connect_signal('property::layout', tagCallback)
+
