@@ -89,9 +89,6 @@ awful.rules.rules = {
       hide_titlebars = false,
       round_corners = true,
       placement = awful.placement.centered
-    },
-    callback = function(c)
-      c:move_to_tag(awful.screen.focused().selected_tag)
-    end
+    }
   }
 }
