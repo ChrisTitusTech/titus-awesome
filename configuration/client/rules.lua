@@ -1,7 +1,7 @@
-local awful = require('awful')
-local gears = require('gears')
-local client_keys = require('configuration.client.keys')
-local client_buttons = require('configuration.client.buttons')
+local awful = require("awful")
+local gears = require("gears")
+local client_keys = require("configuration.client.keys")
+local client_buttons = require("configuration.client.buttons")
 
 -- Rules
 awful.rules.rules = {
@@ -26,12 +26,12 @@ awful.rules.rules = {
     }
   },
   {
-    rule_any = {name = {'QuakeTerminal'}},
+    rule_any = {name = {"QuakeTerminal"}},
     properties = {skip_decoration = true}
   },
   -- Titlebars
   {
-    rule_any = {type = {'dialog'}, class = {'Wicd-client.py', 'calendar.google.com'}},
+    rule_any = {class = {"Wicd-client.py", "calendar.google.com"}},
     properties = {
       placement = awful.placement.centered,
       ontop = true,
@@ -43,6 +43,52 @@ awful.rules.rules = {
         end
       end,
       skip_decoration = true
+    }
+  },
+  -- -------- Dialog -----------
+
+  {
+    id = "dialog",
+    rule_any = {
+      class = {
+        "File-roller",
+        "Nm-connection-editor"
+      },
+      type = {
+        "modal",
+        "dialog"
+      },
+      name = {
+        "Open File",
+        "Save File",
+        "Discord Updater",
+        "Steam Guard",
+        "Steam Guard - Computer Authorization Required"
+      },
+      instance = {
+        "file_progress",
+        "Popup",
+        "nm-connection-editor",
+        "file-roller",
+        "gnome-system-monitor",
+        "lxappearance",
+        "xfce4-power-manager-settings"
+      },
+      role = {
+        "GtkFileChooserDialog",
+        "pop-up"
+      }
+    },
+    properties = {
+      titlebars_enabled = true,
+      maximized = false,
+      floating = true,
+      above = true,
+      draw_backdrop = true,
+      skip_decoration = true,
+      hide_titlebars = false,
+      round_corners = true,
+      placement = awful.placement.centered
     }
   }
 }
