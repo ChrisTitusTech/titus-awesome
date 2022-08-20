@@ -1,33 +1,21 @@
 ## Material and Mouse driven theme for [AwesomeWM 4.3](https://awesomewm.org/)
 ### Original design by PapyElGringo, I modified it removing sidebar and condensing the bars to a single top panel. 
 
-Note: This fork focuses on streamlining the config and adding some Quality of Life touches to the theme.
+Baseado no titus-awesome
 
-An almost desktop environment made with [AwesomeWM](https://awesomewm.org/) following the [Material Design guidelines](https://material.io) with a performant opiniated mouse/keyboard workflow to increase daily productivity and comfort.
-
-[![](./theme/titus-theme/demo.png)](https://www.reddit.com/r/unixporn/comments/anp51q/awesome_material_awesome_workflow/)
-*[Click to view in high quality](https://www.reddit.com/r/unixporn/comments/anp51q/awesome_material_awesome_workflow/)*
-
-| Fullscreen   | Rofi Combo Panel | Exit screen   |
-|:-------------:|:-------------:|:-------------:|
-|![](./theme/titus-theme/fullscreen.png)|![](./theme/titus-theme/panel.png)|![](https://i.imgur.com/rcKOLYQ.png)|
+Note: Este fork é apenas uma tentativa pessoal de melhor meu trabalho, aprender e compartilhar e não perder minhas ideias.
 
 ## Installation
-
-### 1) Get all the dependencies
-
-#### Debian-Based
-
-```
-sudo apt install awesome fonts-roboto rofi compton i3lock xclip qt5-style-plugins materia-gtk-theme lxappearance xbacklight flameshot nautilus xfce4-power-manager pnmixer network-manager-gnome policykit-1-gnome -y
-wget -qO- https://git.io/papirus-icon-theme-install | sh
-```
 
 #### Arch-Based
 
 ```
-yay -S awesome rofi picom i3lock-fancy xclip ttf-roboto polkit-gnome materia-theme lxappearance flameshot pnmixer network-manager-applet xfce4-power-manager qt5-styleplugins papirus-icon-theme -y
+yay -S awesome rofi picom xclip ttf-roboto polkit-gnome materia-theme lxappearance flameshot pnmixer network-manager-applet xfce4-power-manager qt5-styleplugins papirus-icon-theme -y
 ```
+instalar i3lock e i3lock-fancy, criar script
+instalar o pnmixer por fora também, q no script nunca funciona
+importante deixar o yay funcional antes :)
+
 
 #### Program list
 
@@ -51,31 +39,22 @@ yay -S awesome rofi picom i3lock-fancy xclip ttf-roboto polkit-gnome materia-the
 
 Arch-Based Installs
 ```
-git clone https://github.com/ChrisTitusTech/titus-awesome ~/.config/awesome
+git clone https://https://github.com/Byronico-PRS/my_awesome1 ~/.config/awesome
 ```
-
-Debian-Based Installs
-```
-git clone --branch debian https://github.com/ChrisTitusTech/titus-awesome ~/.config/awesome
-```
-
 ### 3) Set the themes
 
-Start `lxappearance` to activate the **icon** theme and **GTK** theme.
-Note: for cursor theme, edit `~/.icons/default/index.theme` and `~/.config/gtk3-0/settings.ini`, for the change to also show up in applications run as root, copy the 2 files over to their respective place in `/root`.
-
-Recommended Cursors - <https://github.com/keeferrourke/capitaine-cursors>
-
 Set Rofi Theme
+
 ```
 mkdir -p ~/.config/rofi
 cp $HOME/.config/awesome/theme/config.rasi ~/.config/rofi/config.rasi
 sed -i '/@import/c\@import "'$HOME'/.config/awesome/theme/sidebar.rasi"' ~/.config/rofi/config.rasi
+
 ```
 
 ### 4) Same theme for Qt/KDE applications and GTK applications, and fix missing indicators
 
-First install `qt5-style-plugins` (debian) | `qt5-styleplugins` (arch) and add this to the bottom of your `/etc/environment`
+First install  `qt5-styleplugins` (arch) and add this to the bottom of your `/etc/environment`
 
 ```bash
 XDG_CURRENT_DESKTOP=Unity
