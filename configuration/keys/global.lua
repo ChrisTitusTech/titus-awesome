@@ -12,15 +12,15 @@ local globalKeys =
   -- Hotkeys
   awful.key({modkey}, 'F1', hotkeys_popup.show_help, {description = 'Show help', group = 'awesome'}),
   -- Tag browsing
-  awful.key({modkey}, 'w', awful.tag.viewprev, {description = 'view previous', group = 'tag'}),
-  awful.key({modkey}, 's', awful.tag.viewnext, {description = 'view next', group = 'tag'}),
+  awful.key({modkey}, '+', awful.tag.viewprev, {description = 'view previous', group = 'tag'}),
+  awful.key({modkey}, '-', awful.tag.viewnext, {description = 'view next', group = 'tag'}),
   awful.key({altkey, 'Control'}, 'Up', awful.tag.viewprev, {description = 'view previous', group = 'tag'}),
   awful.key({altkey, 'Control'}, 'Down', awful.tag.viewnext, {description = 'view next', group = 'tag'}),
   awful.key({modkey}, 'Escape', awful.tag.history.restore, {description = 'go back', group = 'tag'}),
   -- Default client focus
   awful.key(
     {modkey},
-    'd',
+    '*',
     function()
       awful.client.focus.byidx(1)
     end,
@@ -28,7 +28,7 @@ local globalKeys =
   ),
   awful.key(
     {modkey},
-    'a',
+    '/',
     function()
       awful.client.focus.byidx(-1)
     end,
@@ -36,7 +36,7 @@ local globalKeys =
   ),
   awful.key(
     {modkey},
-    'r',
+    'z',
     function()
       awful.spawn('rofi -combi-modi window,drun -show combi -modi combi')
     end,
@@ -109,7 +109,7 @@ local globalKeys =
     {description = 'Lock the screen', group = 'awesome'}
   ),
   awful.key(
-    {modkey},
+    {modkey, 'Shift'},
     'Print',
     function()
       awful.util.spawn_with_shell(apps.default.delayed_screenshot)
@@ -125,8 +125,8 @@ local globalKeys =
     {description = 'Take a screenshot of your active monitor and copy it to clipboard', group = 'screenshots (clipboard)'}
   ),
   awful.key(
-    {altkey, 'Shift'},
-    'p',
+    {modkey},
+    'Print',
     function()
       awful.util.spawn_with_shell(apps.default.region_screenshot)
     end,
@@ -142,11 +142,35 @@ local globalKeys =
   ),
   awful.key(
     {modkey},
-    'b',
+    'w',
     function()
       awful.util.spawn(apps.default.browser)
     end,
     {description = 'Open a browser', group = 'launcher'}
+  ),
+  awful.key(
+    {modkey},
+    's',
+    function()
+      awful.util.spawn(apps.default.office)
+    end,
+    {description = 'Open a office suite', group = 'launcher'}
+  ),
+  awful.key(
+    {modkey},
+    'a',
+    function()
+      awful.util.spawn(apps.default.mail)
+    end,
+    {description = 'Open a mail client', group = 'launcher'}
+  ),
+  awful.key(
+    {modkey},
+    'g',
+    function()
+      awful.util.spawn(apps.default.social)
+    end,
+    {description = 'Open a chat app', group = 'launcher'}
   ),
   -- Standard program
   awful.key(
@@ -253,14 +277,14 @@ local globalKeys =
     {description = 'restore minimized', group = 'client'}
   ),
   -- Dropdown application
-  awful.key(
-    {modkey},
-    'z',
-    function()
-      _G.toggle_quake()
-    end,
-    {description = 'dropdown application', group = 'launcher'}
-  ),
+ -- awful.key(
+ --   {modkey},
+ --   'z',
+ --   function()
+ --     _G.toggle_quake()
+ --   end,
+ --   {description = 'dropdown application', group = 'launcher'}
+ -- ),
   -- Widgets popups
   --[[awful.key(
     {altkey},
@@ -351,7 +375,7 @@ local globalKeys =
   -- Screen management
   awful.key(
     {modkey},
-    'o',
+    'd',
     awful.client.movetoscreen,
     {description = 'move window to next screen', group = 'client'}
   ),
@@ -380,29 +404,29 @@ local globalKeys =
     end
   ),
   -- Lutris hotkey
-  awful.key(
-    {modkey},
-    'g',
-    function()
-      awful.util.spawn_with_shell('lutris')
-    end
-  ),
+  --awful.key(
+  --  {modkey},
+  --  'g',
+  --  function()
+  --    awful.util.spawn_with_shell('lutris')
+   -- end
+ -- ),
   -- System Monitor hotkey
-  awful.key(
-    {modkey},
-    'm',
-    function()
-      awful.util.spawn_with_shell('mate-system-monitor')
-    end
-  ),
+-- awful.key(
+--   {modkey},
+--   'm',
+--   function()
+--     awful.util.spawn_with_shell('htop')
+--   end
+-- ),
   -- Kill VLC
-  awful.key(
-    {modkey},
-    'v',
-    function()
-      awful.util.spawn_with_shell('killall -9 vlc')
-    end
-  ),
+--  awful.key(
+--    {modkey},
+--    'v',
+--    function()
+--      awful.util.spawn_with_shell('killall -9 vlc')
+--    end
+--  ),
   -- File Manager
   awful.key(
     {modkey},
@@ -411,16 +435,16 @@ local globalKeys =
       awful.util.spawn(apps.default.files)
     end,
     {description = 'filebrowser', group = 'hotkeys'}
-  ),
-  -- Emoji Picker
-  awful.key(
-    {modkey},
-    'a',
-    function()
-      awful.util.spawn_with_shell('ibus emoji')
-    end,
-    {description = 'Open the ibus emoji picker to copy an emoji to your clipboard', group = 'hotkeys'}
   )
+  -- Emoji Picker
+--  awful.key(
+ --   {modkey},
+ --   'a',
+ --   function()
+--      awful.util.spawn_with_shell('ibus emoji')
+ --   end,
+--    {description = 'Open the ibus emoji picker to copy an emoji to your clipboard', group = 'hotkeys'}
+--  )
 )
 
 -- Bind all key numbers to tags.

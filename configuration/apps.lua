@@ -8,34 +8,37 @@ local rofi_command = 'env /usr/bin/rofi -dpi ' .. get_dpi() .. ' -width ' .. wit
 return {
   -- List of apps to start by default on some actions
   default = {
-    terminal = 'terminator',
+    terminal = 'xfce4-terminal',
+    office = 'libreoffice',
+    mail = 'thunderbird',  
     rofi = rofi_command,
     lock = 'i3lock-fancy',
-    quake = 'terminator',
-    screenshot = 'flameshot screen -p ~/Pictures',
-    region_screenshot = 'flameshot gui -p ~/Pictures',
-    delayed_screenshot = 'flameshot screen -p ~/Pictures -d 5000',
+    quake = 'xfce4-terminal',
+    screenshot = 'flameshot screen -p ~/Imagens',
+    region_screenshot = 'flameshot gui',
+    delayed_screenshot = 'flameshot screen -p ~/Imagens -d 5000',
     browser = 'brave',
-    editor = 'gedit', -- gui text editor
+    editor = 'code', -- gui text editor
     social = 'discord',
     game = rofi_command,
-    files = 'nautilus',
+    files = 'nemo',
     music = rofi_command 
   },
   -- List of apps to start once on start-up
   run_on_start_up = {
     'picom --config ' .. filesystem.get_configuration_dir() .. '/configuration/picom.conf',
-    'nm-applet --indicator', -- wifi
+    'nitrogen --restore &',
+    --'nm-applet --indicator', -- wifi
     'pnmixer', -- shows an audiocontrol applet in systray when installed.
     --'blueberry-tray', -- Bluetooth tray icon
     'numlockx on', -- enable numlock
     '/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 & eval $(gnome-keyring-daemon -s --components=pkcs11,secrets,ssh,gpg)', -- credential manager
     'xfce4-power-manager', -- Power manager
      'flameshot',
-     'synology-drive -minimized',
-     'steam -silent',
-    'feh --randomize --bg-fill ~/.wallpapers/*',
-    '/usr/bin/variety',
+     -- 'synology-drive -minimized',
+    -- qq 'steam -silent',
+    -- 'feh --randomize --bg-fill ~/.wallpapers/*',
+    --'/usr/bin/variety',
     -- Add applications that need to be killed between reloads
     -- to avoid multipled instances, inside the awspawn script
     '~/.config/awesome/configuration/awspawn' -- Spawn "dirty" apps that can linger between sessions
