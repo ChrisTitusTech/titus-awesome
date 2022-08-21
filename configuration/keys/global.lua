@@ -380,20 +380,20 @@ local globalKeys =
     {description = 'move window to next screen', group = 'client'}
   ),
   -- Open default program for tag
-  awful.key(
-    {modkey},
-    't',
-    function()
-      awful.spawn(
-          awful.screen.focused().selected_tag.defaultApp,
-          {
-            tag = _G.mouse.screen.selected_tag,
-            placement = awful.placement.bottom_right
-          }
-        )
-    end,
-    {description = 'Open default program for tag/workspace', group = 'tag'}
-  ),
+ -- awful.key(
+ --   {modkey},
+ --   't',
+ --   function()
+ --     awful.spawn(
+ --         awful.screen.focused().selected_tag.defaultApp,
+ --         {
+ --           tag = _G.mouse.screen.selected_tag,
+ --           placement = awful.placement.bottom_right
+ --         }
+ --       )
+ --   end,
+ --   {description = 'Open default program for tag/workspace', group = 'tag'}
+ -- ),
   -- Custom hotkeys
   -- vfio integration
   awful.key(
@@ -412,13 +412,13 @@ local globalKeys =
    -- end
  -- ),
   -- System Monitor hotkey
--- awful.key(
---   {modkey},
---   'm',
---   function()
---     awful.util.spawn_with_shell('htop')
---   end
--- ),
+  awful.key(
+    {modkey},
+    'm',
+    function()
+      awful.util.spawn_with_shell('xfce4-taskmanager')
+    end
+  ),
   -- Kill VLC
 --  awful.key(
 --    {modkey},
