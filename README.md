@@ -1,14 +1,25 @@
 ## Material and Mouse driven theme for [AwesomeWM 4.3](https://awesomewm.org/)
-### Original design by PapyElGringo,  modified it removing sidebar and condensing the bars to a single top panel. 
+### Original design by PapyElGringo,  modified by Chris Titus. 
 
-Baseado no titus-awesome
+## Baseado no titus-awesome
 
-Note: Este fork é apenas uma tentativa pessoal de melhor meu trabalho, aprender e compartilhar e não perder minhas ideias.
+Esta fork é apenas uma tentativa pessoal de melhorar meu modo de trabalho, aprender, compartilhar e não perder minhas ideias.
 
-## Installation
+## Instalação
 
-#### Arch-Based
-importante deixar o yay funcional antes :)
+#### Manjaro XFCE
+
+Todas as minhas ações foram  feitas em uma instalação do manjaro XFCE, mas devem funcionar para outras distros baseadas em Arch
+
+Deixar os seguintes repos funcionais: criarei um script para isso
+    yay
+    flatpack
+    AUR
+
+
+# Instalar os pacotes:
+
+Tenho que atualizar esse comando apra meu uso mas segue aqui todos os programas q devo lembrar de instalar para o funcionamento completo do meu projeto:
 
 ```
 yay -S awesome rofi picom xclip ttf-roboto polkit-gnome materia-theme lxappearance flameshot pnmixer network-manager-applet xfce4-power-manager qt5-styleplugins papirus-icon-theme -y
@@ -20,7 +31,7 @@ pnmixer
 discord
 thunderbird
 libreoffice
-deixar o flatpack funcional
+nitrogen
 spotify via flatpack -- no caso escolhi via flatpack, não sei se vindo de outro repo o comando vai ser o mesmo.
 
 Com esses programas cada tag (ou área de trabalhom irá abrir o programa correspondente)
@@ -46,13 +57,13 @@ Com esses programas cada tag (ou área de trabalhom irá abrir o programa corres
 - [network-manager-applet](https://gitlab.gnome.org/GNOME/network-manager-applet) nm-applet is a Network Manager Tray display from GNOME.
 - [xfce4-power-manager](https://docs.xfce.org/xfce/xfce4-power-manager/start) XFCE4's power manager is excellent and a great way of dealing with sleep, monitor timeout, and other power management features.
 
-### 2) Clone the configuration
+### 2) Clonar os arquivos de configuração:
 
 Arch-Based Installs
 ```
 git clone https://https://github.com/Byronico-PRS/my_awesome1 ~/.config/awesome
 ```
-### 3) Set the themes
+### 3) Ligar configurações do Rofi com os arquivos de configuração já baixados
 
 Set Rofi Theme
 
