@@ -1,5 +1,5 @@
-## Material and Mouse driven theme for [AwesomeWM 4.3](https://awesomewm.org/)
-### Original design by PapyElGringo, C modified it removing sidebar and condensing the bars to a single top panel. 
+
+
 
 Baseado no titus-awesome
 
