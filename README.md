@@ -1,5 +1,5 @@
 ## Material and Mouse driven theme for [AwesomeWM 4.3](https://awesomewm.org/)
-### Original design by PapyElGringo, I modified it removing sidebar and condensing the bars to a single top panel. 
+### Original design by PapyElGringo, C modified it removing sidebar and condensing the bars to a single top panel. 
 
 Baseado no titus-awesome
 
@@ -8,13 +8,24 @@ Note: Este fork é apenas uma tentativa pessoal de melhor meu trabalho, aprender
 ## Installation
 
 #### Arch-Based
+importante deixar o yay funcional antes :)
 
 ```
 yay -S awesome rofi picom xclip ttf-roboto polkit-gnome materia-theme lxappearance flameshot pnmixer network-manager-applet xfce4-power-manager qt5-styleplugins papirus-icon-theme -y
 ```
-instalar i3lock e i3lock-fancy, criar script
-instalar o pnmixer por fora também, q no script nunca funciona
-importante deixar o yay funcional antes :)
+Programas necessários que o script não instala
+
+i3lock e i3lock-fancy
+pnmixer 
+discord
+thunderbird
+libreoffice
+deixar o flatpack funcional
+spotify via flatpack -- no caso escolhi via flatpack, não sei se vindo de outro repo o comando vai ser o mesmo.
+
+Com esses programas cada tag (ou área de trabalhom irá abrir o programa correspondente)
+
+é possível configurar para ter mais áres de trabalho e masi tipos de programa.
 
 
 #### Program list

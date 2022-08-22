@@ -379,21 +379,21 @@ local globalKeys =
     awful.client.movetoscreen,
     {description = 'move window to next screen', group = 'client'}
   ),
-  -- Open default program for tag
- -- awful.key(
- --   {modkey},
- --   't',
- --   function()
- --     awful.spawn(
- --         awful.screen.focused().selected_tag.defaultApp,
- --         {
- --           tag = _G.mouse.screen.selected_tag,
- --           placement = awful.placement.bottom_right
- --         }
- --       )
- --   end,
- --   {description = 'Open default program for tag/workspace', group = 'tag'}
- -- ),
+ -- Open default program for tag
+  awful.key(
+    {modkey},
+    't',
+    function()
+      awful.spawn(
+          awful.screen.focused().selected_tag.defaultApp,
+          {
+            tag = _G.mouse.screen.selected_tag,
+            placement = awful.placement.bottom_right
+          }
+        )
+    end,
+    {description = 'Open default program for tag/workspace', group = 'tag'}
+  ),
   -- Custom hotkeys
   -- vfio integration
   awful.key(

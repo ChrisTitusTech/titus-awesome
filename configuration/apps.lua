@@ -20,9 +20,9 @@ return {
     browser = 'brave',
     editor = 'code', -- gui text editor
     social = 'discord',
-    game = rofi_command,
+    game = 'scid',
     files = 'nemo',
-    music = rofi_command 
+    music = 'com.spotify.Client' 
   },
   -- List of apps to start once on start-up
   run_on_start_up = {
