@@ -77,8 +77,8 @@ local awesome_overrides =
     'linear:0,0:' ..
     dpi(40) ..
       ',0:0,' ..
-        theme.primary.hue_500 ..
-          ':0.08,' .. theme.primary.hue_500 .. ':0.08,' .. theme.background.hue_800 .. ':1,' .. theme.background.hue_800
+      '#FFA726' ..
+          ':0.08,' .. '#FFA726' .. ':0.08,' .. theme.background.hue_800 .. ':1,' .. theme.background.hue_800
 
   -- Tasklist
 
@@ -99,7 +99,7 @@ local awesome_overrides =
 
   --Client
   theme.border_width = dpi(2)
-  theme.border_focus = theme.primary.hue_500
+  theme.border_focus = '#FFA726'
   theme.border_normal = theme.background.hue_800
 end
 return {
