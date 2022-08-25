@@ -61,7 +61,7 @@ Com esses programas cada tag (ou área de trabalhom irá abrir o programa corres
 
 Arch-Based Installs
 ```
-git clone https://https://github.com/Byronico-PRS/my_awesome1 ~/.config/awesome
+git clone https://github.com/Byronico-PRS/my_awesome1 ~/.config/awesome
 ```
 ### 3) Ligar configurações do Rofi com os arquivos de configuração já baixados
 
