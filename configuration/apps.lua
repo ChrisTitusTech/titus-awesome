@@ -32,6 +32,7 @@ return {
     'pnmixer', -- shows an audiocontrol applet in systray when installed.
     --'blueberry-tray', -- Bluetooth tray icon
     'numlockx on', -- enable numlock
+    'pamac-tray', -- starts pamac tray
     '/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 & eval $(gnome-keyring-daemon -s --components=pkcs11,secrets,ssh,gpg)', -- credential manager
     --'xfce4-power-manager', -- Power manager
     -- 'flameshot',
