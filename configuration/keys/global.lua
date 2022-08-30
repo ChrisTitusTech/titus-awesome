@@ -434,7 +434,7 @@ local globalKeys =
     function()
       awful.util.spawn(apps.default.files)
     end,
-    {description = 'filebrowser', group = 'hotkeys'}
+    {description = 'open a filemanager', group = 'launcher'}
   )
   -- Emoji Picker
 --  awful.key(
